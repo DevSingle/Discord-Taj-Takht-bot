@@ -14,7 +14,7 @@ class Onjoin(commands.Cog):
 
         guild= self.bot.get_guild(850662966646931456) #Guild ID
         channel=guild.get_channel(1135892819110805544) #Channel ID
-        await channel.send(f"{member.mention} Welcome To {guild.name}",embed=embed)
+        await channel.send(f"{member.mention} Welcome To {guild.name}",embed=embed) #mention User
 
 
     @tasks.loop(minutes=15)
