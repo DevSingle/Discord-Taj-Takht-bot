@@ -66,11 +66,11 @@ async def on_command_error(ctx: nextcord.Message, error: Exception):
 
 
 
-@bot.command()
-@commands.is_owner()
-async def ping(ctx):
-    latency = bot.latency
-    await ctx.reply(f'Pong! Latency: {latency * 1000:.2f}ms')
+# @bot.command()
+# @commands.is_owner()
+# async def ping(ctx):
+#     latency = bot.latency
+#     await ctx.reply(f'Pong! Latency: {latency * 1000:.2f}ms')
 
 
 bot.run(os.getenv('TOKEN'))
