@@ -13,5 +13,13 @@ Coming Soon...
         """
         , ephemeral=True)
 
+    @nextcord.slash_command(description="Help")
+    async def help(self, interaction: nextcord.Interaction):
+        await interaction.response.send_message("""
+Coming Soon...
+        """
+        , ephemeral=True)
+
+
 def setup(bot):
     bot.add_cog(Info(bot))
