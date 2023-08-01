@@ -12,7 +12,7 @@ class Cog(commands.Cog):
         self.bot = bot
 
     @commands.command()
-    @commands.has_permissions(administrator=True)
+    @commands.is_owner()
     async def load(self, ctx: Context, extension: str):
         try:
             if ".py" in extension:
@@ -39,7 +39,7 @@ class Cog(commands.Cog):
             await ctx.send(f':white_check_mark: All done! Successfully loaded **{extension}**')
 
     @commands.command()
-    @commands.has_permissions(administrator=True)
+    @commands.is_owner()
     async def unload(self, ctx: Context, extension: str):
         try:
             if ".py" in extension:
@@ -61,13 +61,13 @@ class Cog(commands.Cog):
             await ctx.send(f':white_check_mark: All done! Successfully unloaded **{extension}**')
 
     @commands.command()
-    @commands.has_permissions(administrator=True)
+    @commands.is_owner()
     async def reload(self, ctx: Context, extension: str):
         await self.unload(ctx, extension)
         await self.load(ctx, extension)
 
     @commands.command()
-    @commands.has_permissions(administrator=True)
+    @commands.is_owner()
     async def shutdown(self, ctx: Context):
         bot: _bot = ctx.bot
         await bot.close()
